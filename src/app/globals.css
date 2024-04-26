@@ -2,32 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* custom checkbox start */
+.custom-checkbox label {
+    @apply relative px-0 py-3 pl-8 text-green-500 text-base font-normal font-sans;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  
+  .custom-checkbox label:before {
+    @apply absolute w-5 h-5 bg-transparent border border-green-500 top-2.5 left-2;
+    content: "";
   }
-}
+  
+  .custom-checkbox {
+    @apply relative block;
+  }
+  
+  .custom-checkbox input:checked+label:before {
+    @apply bg-green-500;
+  }
+  
+  .custom-checkbox.empt label:before {
+    @apply top-[-12px];
+  }
+  
+  .custom-checkbox.empt input:checked+label:after {
+    @apply top-[-3px];
+  }
+  
+  .custom-checkbox input:checked+label:after {
+    @apply absolute left-3 top-5 bg-black w-0.5 h-0.5 rotate-45;
+    content: "";
+    box-shadow: 2px 0 0 #000, 4px 0 0 #000, 4px -2px 0 #000, 4px -4px 0 #000, 4px -6px 0 #000, 4px -8px 0 #000;
+  }
+  /* custom checkbox end */
+  
