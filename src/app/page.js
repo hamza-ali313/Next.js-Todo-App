@@ -47,9 +47,9 @@ const TodoList = () => {
     const addtodo = async (e) => {
         try {
             e.preventDefault();
+            setTodo("")
             const data = await addTodo(todo);
             setTodos(data.todos);
-            setTodo("")
         } catch (error) {
             console.log('todo could not be added:', error);
         }
