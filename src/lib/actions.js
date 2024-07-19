@@ -20,7 +20,7 @@ const deleteTodo = async (id) => {
      const todos = await Todo.find();
     return { todos: todos };
   } catch (error) {
-    console.error('Error deleting todo:', error);
+    console.error('Error deleting todo :', error);
     return { error: 'Error deleting todo' };
   }
 };
@@ -40,3 +40,4 @@ const addTodo = async (text) => {
 };
 
 export { readTodo, deleteTodo, addTodo };
+

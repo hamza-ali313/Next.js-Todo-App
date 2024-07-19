@@ -11,7 +11,7 @@ const connectDB = async () => {
       useUnifiedTopology: true,
     });
     /// to connect with the database I need to make this component server component
-    console.log('Connected to MongoDB successfully!');
+    console.log('Connected to MongoDB successfully wow!');
   } catch (error) {
     console.error('MongoDB connection error:', error.message);
   }
